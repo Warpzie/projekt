@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 
 namespace projekt
 {
@@ -11,21 +10,20 @@ namespace projekt
             StreamReader sr = new StreamReader("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt");
             Console.WriteLine("zakodovat alebo dekodovat?");
             string vyber = Console.ReadLine();
-
             Console.WriteLine("aky je posun sifry?");
             int posun = int.Parse(Console.ReadLine());
-            string text = sr.ReadLine();
-            static string koduj(string text,int posun)
+            string text = sr.ReadLine(); //nacitanie obsahu suboru
+            static string koduj(string text,int posun) //text - obsah suboru, psosun / o kolko sa posuva
             {
-                string vysledok = "";
+                string vysledok = ""; //prazdny string na ukladanie
                 Console.WriteLine(text);
-                foreach (char c in text)
+                foreach (char c in text) //pre kazdy znak
                 {
-                    if (c!=' ')
+                    if (c!=' ') //ak nieje medzera
                     {
-                        int index = c + posun % 256;
+                        int index = c + posun % 256; //posunutie sifry a zabezpecenie aby hodnota bola vzdy medzi 0 a 255 
 
-                        vysledok += (char)index;
+                        vysledok += (char)index; //prelozenie a pridanie znaku
                     }
                 }
                 return vysledok;
@@ -45,11 +43,11 @@ namespace projekt
                 return vysledok;
             }
             sr.Close();
-            StreamWriter sw = new StreamWriter("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt", false);
+            StreamWriter sw = new StreamWriter("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt", false); //preco tam je false?
 
             if (vyber == "zakodovat")
             {
-                Console.WriteLine(koduj(text,posun) + "-zakodovane");
+                Console.WriteLine(koduj(text,posun) + "-zakodovane"); //pre mna,nemusi byt
                 sw.WriteLine(koduj(text, posun) + "-zakodovane");
             }
             else if (vyber == "dekodovat")
