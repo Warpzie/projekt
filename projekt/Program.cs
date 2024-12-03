@@ -7,16 +7,16 @@ namespace projekt
     {
         static void Main(string[] args)
         {
-            StreamReader sr = new StreamReader("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt");
+            StreamReader sr = new StreamReader("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt");//create stream reader
             Console.WriteLine("zakodovat alebo dekodovat?");
-            string vyber = Console.ReadLine();
+            string vyber = Console.ReadLine(); //nacitanie vyberu uzivatela
             Console.WriteLine("aky je posun sifry?");
-            int posun = int.Parse(Console.ReadLine());
+            int posun = int.Parse(Console.ReadLine()); //nacitanie a konvertovanie posunu
             string text = sr.ReadLine(); //nacitanie obsahu suboru
             static string koduj(string text,int posun) //text - obsah suboru, psosun / o kolko sa posuva
             {
                 string vysledok = ""; //prazdny string na ukladanie
-                Console.WriteLine(text);
+                Console.WriteLine(text); //for me
                 foreach (char c in text) //pre kazdy znak
                 {
                     if (c!=' ') //ak nieje medzera
@@ -48,7 +48,7 @@ namespace projekt
             if (vyber == "zakodovat")
             {
                 Console.WriteLine(koduj(text,posun) + "-zakodovane"); //pre mna,nemusi byt
-                sw.WriteLine(koduj(text, posun) + "-zakodovane");
+                sw.WriteLine(koduj(text, posun) + "-zakodovane");//zapis do suboru
             }
             else if (vyber == "dekodovat")
             {
