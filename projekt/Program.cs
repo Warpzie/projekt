@@ -56,7 +56,6 @@ namespace projekt
                 sw.WriteLine(dekoduj(text, posun) + "-dekodovane");
             }
             sw.Close();
-            
         }
     }
 }
