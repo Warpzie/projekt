@@ -16,7 +16,7 @@ namespace projekt
             static string koduj(string text,int posun) //text - obsah suboru, psosun / o kolko sa posuva
             {
                 string vysledok = ""; //prazdny string na ukladanie
-                Console.WriteLine(text); //for me
+                Console.WriteLine(text); 
                 foreach (char c in text) //pre kazdy znak
                 {
                     if (c!=' ') //ak nieje medzera
@@ -46,7 +46,7 @@ namespace projekt
             StreamWriter sw = new StreamWriter("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt", false); //false prepisuje subor, true pridava nakoniec
             if (vyber == "zakodovat")
             {
-                Console.WriteLine(koduj(text,posun) + "-zakodovane"); //pre mna,nemusi byt
+                Console.WriteLine(koduj(text,posun) + "-zakodovane");
                 sw.WriteLine(koduj(text, posun) + "-zakodovane");//zapis do suboru
             }
             else if (vyber == "dekodovat")
