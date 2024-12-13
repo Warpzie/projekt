@@ -43,8 +43,7 @@ namespace projekt
                 return vysledok;
             }
             sr.Close();
-            StreamWriter sw = new StreamWriter("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt", false); //preco tam je false?
-
+            StreamWriter sw = new StreamWriter("C:/Users/ALEX/source/repos/projekt/projekt/TextFile1.txt", false); //false prepisuje subor, true pridava nakoniec
             if (vyber == "zakodovat")
             {
                 Console.WriteLine(koduj(text,posun) + "-zakodovane"); //pre mna,nemusi byt
