@@ -1,4 +1,4 @@
-//for console application
+//for console app .NET framework
 using System;
 using System.IO;
 
