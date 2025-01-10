@@ -1,4 +1,5 @@
-﻿using System;
+//for console application
+using System;
 using System.IO;
 
 namespace projekt
